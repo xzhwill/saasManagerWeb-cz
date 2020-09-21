@@ -1,0 +1,111 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  .header {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 40px;
+  }
+  .main {
+    /*position: absolute;
+    top: 40px;
+    overflow: auto;*/
+    display: flex;
+    flex: 1;
+    width: 100%;
+    /*height: 100%;*/
+    .main-body {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      bottom: 10px;
+      /* left: 220px;
+      width: 87.travelReportForms%;
+      height: 98%; */
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #fff;
+      .bread {
+        background-color: #fff;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        padding: 4px 0 14px;
+        border-bottom: 1px solid rgba(216, 216, 216, 0.5);
+        margin-bottom: 15px;
+      }
+      .bread-separator {
+        margin: 0 10px;
+      }
+      .bread-title {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .gray {
+        color: #090b0e;
+        opacity: 0.4;
+      }
+      .main-body-box {
+        /*flex:orderReportForms;*/
+        height: 80%;
+        background-color: #fff;
+        position: relative;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+.nav-list-tag {
+  cursor: pointer;
+}
+.wrapper-nav-list {
+  height: 38px;
+  overflow: hidden;
+  padding: 0 20px;
+}
+/*菜单栏展开收起*/
+.openMenu,.retractMenu{
+  position: fixed;
+  top: 50%;
+  left: 51px;
+  margin-top: -25px;
+  z-index: 99;
+  width: 10px;
+  height: 50px;
+}
+.retractMenu{
+  left: 191px;
+}
+.slider {
+  z-index: 99;
+  height: 100%;
+}
+.searchForm {
+  max-width: 960px;
+  position: absolute;
+  z-index: 99;
+  right: 30px;
+  background: #fff;
+  padding-left: 20px;
+  box-shadow: -10px 10px 10px rgba(0, 204, 204, .5) ;
+}
+.el-form-item--small.el-form-item {
+  margin-bottom: 0;
+}
+.page-search-btn {
+  display: flex;
+  flex-flow: nowrap;
+}
+.page-search-btn img {
+  width: 32px;
+  height: 32px;
+  margin: 0 10px;
+}
+.changeRotate {
+  transform: rotate(180deg);
+}

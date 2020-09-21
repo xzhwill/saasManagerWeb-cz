@@ -1,0 +1,250 @@
+@import "./animate.less";
+@import "./common.css";
+
+body .el-table th.gutter{
+  display: table-cell !important;
+}
+/*按钮*/
+.el-button--primary,
+.el-button--danger,
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:active,
+.el-button--primary.is-disabled:focus,
+.el-button--primary.is-disabled:hover {
+  background: #48c0cd !important;
+  border-color: #48c0cd !important;
+}
+.el-button--primary:focus,
+.el-button--primary:hover,
+.el-button--danger:focus,
+.el-button--danger:hover {
+  background: #48c0cd !important;
+  border-color: #48c0cd !important;
+}
+.el-transfer__button.is-disabled,
+.el-transfer__button.is-disabled:hover {
+  color: #fff;
+}
+.el-button--danger.is-disabled,
+.el-button--danger.is-disabled:active,
+.el-button--danger.is-disabled:focus,
+.el-button--danger.is-disabled:hover {
+  background-color: #fab6b6 !important;
+  border-color: #fab6b6 !important;
+}
+/* 新建工单表单 */
+.add-work-form-container {
+  padding: 20px;
+  width: 100%;
+  .el-form-item {
+    display: inline-block;
+    width: 50%;
+    padding: 10px 8px;
+  }
+}
+.add-work-btn {
+  width: 100%;
+  text-align: right;
+}
+
+/* 头 */
+.page-header {
+  width: 100%;
+  position: relative;
+  .el-date-editor--datetimerange.el-input,
+  .el-date-editor--datetimerange.el-input__inner {
+    width: 100%;
+  }
+  .el-date-editor .el-range__close-icon{display: none;}
+  .el-date-editor .el-range-input{width: 45%;}
+  .el-date-editor .el-range-separator{width: 8%;}
+  .page-header-re-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+  .page-search{
+    padding: 16px 0;
+    width: 100%;
+    .search-form{
+      width: 100%;
+      .el-form-item{
+        display: flex;
+        margin-right: 15px;
+        /*width: 33.3333%;*/
+      }
+      .search-form-list-header{
+        position: relative;
+        display: flex;
+        //width: 100%;
+      }
+      .search-form-tip-list{
+        position: absolute;
+        right: 88px;
+        top: 0;
+        z-index: 10;
+      }
+      .search-form-toggle{
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+.page-check-list{
+  width: 360px;
+  .el-checkbox{
+    padding: 0 4px;
+  }
+  .el-checkbox+.el-checkbox{
+    margin: 0;
+  }
+}
+/* 表格上的导航按钮 */
+.page-nav-btn{
+  width: 100%;
+  overflow: hidden;
+  zoom: 1;
+  padding-bottom: 20px;
+  //height: 32px;
+}
+
+/* 表格 */
+.page-table{
+  .page-table-main{
+    /* 覆盖element-ui */
+    .el-table__header-wrapper thead th{
+      background: #F2F4F9;
+    }
+    .el-table__header-wrapper thead .cell{
+      font-weight: 700;
+      color: #090B0E;
+      text-align: center;
+      font-size: 14px;
+    }
+    .el-table__body .cell{
+      text-align: center;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .table-cell-active{
+      text-decoration: underline;
+      color: #090B0E;
+    }
+    .el-table__fixed-header-wrapper{
+      thead th{
+        background: #F2F4F9;
+      }
+      .cell{
+        text-align: center;
+      }
+    }
+  }
+}
+.el-table th, .el-table .tableHeader,.el-table--striped .el-table__body tr.el-table__row--striped td{
+  background: #F2F4F9;
+  color: #090B0E;
+}
+.el-table__body tr:hover > td {
+  background-color: #F2F4F9 !important;
+  border-top: 1px solid #48c0cd;
+  border-bottom: 1px solid #48c0cd;
+}
+/* 分页 */
+.page-page{
+  width: 100%;
+  text-align: right;
+  margin-top: 15px;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active{
+  background: #48c0cd !important;
+}
+/* popover */
+.page-popover{
+  .page-popover-form{
+    width: 100%;
+    .page-popover-form-btn{
+      text-align: right;
+    }
+  }
+}
+
+/* 详情表单 */
+.page-info-form{
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  .info-form-title{
+    padding: 0 20px 20px 20px;
+  }
+  .el-form-item{
+    display: inline-block;
+    width: 50%;
+    padding: 4px 8px;
+  }
+  .info-form-btn{
+    width: 100%;
+    text-align: right;
+  }
+}
+
+/* 日志 */
+.log-list{
+  width: 100%;
+  .log-item{
+    overflow: hidden;
+    zoom: 1;
+    width: 760px;
+    margin: 0 auto;
+    padding: 6px 0;
+    cursor: pointer;
+  }
+  .log-icon-success{
+    color: #67C23A;
+  }
+  .log-icon-warning{
+    color: #E6A23C;
+  }
+  .log-icon-date{
+    color: #409EFF
+  }
+  .log-label{
+    width: 580px;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .log-date{
+    width: 180px;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .log-footer{
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+/* 详情图片 */
+.page-info-img{
+  text-align: center;
+  .info-img{
+    max-width: 100px;
+    max-height: 100px;
+    cursor: pointer;
+  }
+}
+/*账户体系*/
+
+
+
+
+
+
+

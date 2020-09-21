@@ -1,0 +1,40 @@
+.el-input,
+.el-textarea {
+  width: 210px;
+}
+.changeBg {
+  background: #dfdfdf;
+}
+.tag-con {
+  display: flex;
+  width: 350px;
+  padding: 4px;
+  margin-bottom: 4px;
+  border: 1px solid #dcdfe6;
+}
+/deep/ .el-dialog {
+  width: 450px;
+}
+.btn-group {
+  text-align: center;
+}
+.input-tag {
+  width: 200px;
+  margin-right: 10px;
+}
+/deep/ .operate-time > .el-form-item__label::before {
+  content: '*';
+  color: #F56C6C;
+  margin-right: 4px;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(.3, .3, .3, .3);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateY(-10px);
+  opacity: 0;
+}

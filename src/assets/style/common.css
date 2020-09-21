@@ -1,0 +1,74 @@
+.common-form-container {
+    padding: 20px !important;
+}
+.common-form-item .el-checkbox {
+    margin-left: 20px !important;
+}
+.common-form-item .el-input {
+    width: 300px;
+    margin-right: 5px;
+}
+.common-form-item .el-textarea {
+    width: 300px;
+}
+.radio-input > .el-input {
+    margin-left: 10px;
+}
+.radio-input > .el-date-editor {
+    margin-left: 10px;
+}
+.short-input .radio-input {
+  margin-bottom: 10px;
+}
+
+.short-input .el-input {
+  margin-left: 10px;
+}
+.cell {
+    text-align: center;
+}
+.divide {
+    margin: 20px 0;
+    height: 5px;
+    background-color: #e5e5e5;
+}
+.danger {
+    color: red;
+    font-size: 12px;
+}
+
+/* 操作栏btn */
+.action-btn {
+    cursor: pointer;
+}
+.green {
+   color: #67c23a;
+}
+.blue {
+    color: #48c0cd
+}
+.danger {
+    color: red;
+}
+.gray {
+    color: gray;
+}
+.orange {
+    color:#e6a23c;
+}
+.action-btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+.common-form-remind {
+    padding-left: 120px;
+}
+
+/* 去掉input输入框中的上下箭头 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
