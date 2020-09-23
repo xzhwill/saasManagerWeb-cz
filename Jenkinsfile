@@ -20,9 +20,9 @@ pipeline {
     stages {
         stage('环境准备') {
             steps {
-                dir('devops') {
-                    git url: 'http://58.48.111.50:10003/ops/devops.git', poll: false
-                }
+                // dir('devops') {
+                //     git url: 'http://58.48.111.50:10003/ops/devops.git', poll: false
+                // }
                 script{
                     if (env.BRANCH_NAME == "master") {
                         error("master 分支不允许构建")
@@ -62,42 +62,42 @@ pipeline {
             }
          }
 
-        stage('写入版本号') {
-            steps {
-                sh "echo APPLICATION_NAME is : ${env.FINAL_APPLICATION_NAME}"
-                sh 'touch dist/version.txt'
-                sh 'echo $VERSION > dist/version.txt'
-            }
-        }
+        // stage('写入版本号') {
+        //     steps {
+        //         sh "echo APPLICATION_NAME is : ${env.FINAL_APPLICATION_NAME}"
+        //         sh 'touch dist/version.txt'
+        //         sh 'echo $VERSION > dist/version.txt'
+        //     }
+        // }
 
-        stage('出包') {
-            steps {
-                sh "rm -rf dist/*.zip"
-                sh "cd dist && zip -r  ${env.FINAL_APPLICATION_NAME}_${VERSION}.zip ."
-            }
-        }
-        stage('归档') {
-            steps {
-                sh 'mkdir -p /home/xiaoma/data/artifacts/changzhou/$APPLICATION_NAME'
-                sh "cp dist/${env.FINAL_APPLICATION_NAME}_${VERSION}.zip /home/xiaoma/data/artifacts/changzhou/${APPLICATION_NAME}/${env.FINAL_APPLICATION_NAME}_${VERSION}.zip"
-            }
-        }
+        // stage('出包') {
+        //     steps {
+        //         sh "rm -rf dist/*.zip"
+        //         sh "cd dist && zip -r  ${env.FINAL_APPLICATION_NAME}_${VERSION}.zip ."
+        //     }
+        // }
+        // stage('归档') {
+        //     steps {
+        //         sh 'mkdir -p /home/xiaoma/data/artifacts/changzhou/$APPLICATION_NAME'
+        //         sh "cp dist/${env.FINAL_APPLICATION_NAME}_${VERSION}.zip /home/xiaoma/data/artifacts/changzhou/${APPLICATION_NAME}/${env.FINAL_APPLICATION_NAME}_${VERSION}.zip"
+        //     }
+        // }
 
-        stage('发布到DEV|QA') {
-            steps {
-                ansiblePlaybook(
-                    inventory: "devops/provision/inventories/${env.ENV_NAME}/hosts",
-                    playbook: 'devops/provision/deploy_web.yml',
-                    limit: "changzhou",
-                    tags: 'web_application',
-                    extraVars: [
-                        application_name: "${env.FINAL_APPLICATION_NAME}",
-                        application_version: '$VERSION',
-                        application_package_path: "${WORKSPACE}/dist/${env.FINAL_APPLICATION_NAME}_${VERSION}.zip",
-                        application_package_name: "${env.FINAL_APPLICATION_NAME}_${VERSION}.zip",
-                        apps_directory: "/home/xiaoma/data/changzhou"
-                    ])
-            }
-        }
+        // stage('发布到DEV|QA') {
+        //     steps {
+        //         ansiblePlaybook(
+        //             inventory: "devops/provision/inventories/${env.ENV_NAME}/hosts",
+        //             playbook: 'devops/provision/deploy_web.yml',
+        //             limit: "changzhou",
+        //             tags: 'web_application',
+        //             extraVars: [
+        //                 application_name: "${env.FINAL_APPLICATION_NAME}",
+        //                 application_version: '$VERSION',
+        //                 application_package_path: "${WORKSPACE}/dist/${env.FINAL_APPLICATION_NAME}_${VERSION}.zip",
+        //                 application_package_name: "${env.FINAL_APPLICATION_NAME}_${VERSION}.zip",
+        //                 apps_directory: "/home/xiaoma/data/changzhou"
+        //             ])
+        //     }
+        // }
     }
 }
